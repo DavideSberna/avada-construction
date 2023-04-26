@@ -113,6 +113,7 @@ export default{
     width: 30px;
     margin: 0 auto;
   }
+ 
 }
  
 </style>

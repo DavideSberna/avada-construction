@@ -9,6 +9,11 @@
     <PlanningComponent/>
     <RecentWorkComponent/>
     <CoreValuesComponent/>
+    <OwnersComponent/>
+    <LatestComponent/>
+    <TrustedComponent/>
+     
+
      
      
      
@@ -22,12 +27,15 @@
  
 <script>
 
-import NavComponent from './components/NavComponent.vue'
-import JumboComponent from './components/jumboComponent.vue'
-import SpecialistComponent from './components/SpecialistComponent.vue'
-import PlanningComponent from './components/PlanningComponent.vue'
-import RecentWorkComponent from './components/RecentWorkComponent.vue'
-import CoreValuesComponent from './components/CoreValuesComponent.vue'
+import NavComponent from './components/NavComponent.vue';
+import JumboComponent from './components/jumboComponent.vue';
+import SpecialistComponent from './components/SpecialistComponent.vue';
+import PlanningComponent from './components/PlanningComponent.vue';
+import RecentWorkComponent from './components/RecentWorkComponent.vue';
+import CoreValuesComponent from './components/CoreValuesComponent.vue';
+import OwnersComponent from './components/OwnersComponent.vue';
+import LatestComponent from './components/LatestComponent.vue';
+import TrustedComponent from './components/TrustedComponent.vue';
 export default{
  name: 'App',
 
@@ -38,6 +46,9 @@ export default{
   PlanningComponent,
   RecentWorkComponent,
   CoreValuesComponent,
+  OwnersComponent,
+  LatestComponent,
+  TrustedComponent,
  },
  
  
@@ -56,7 +67,7 @@ export default{
 
 
 <style lang="scss" scoped>
-  
+   
    
   
  
