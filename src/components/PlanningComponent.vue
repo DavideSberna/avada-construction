@@ -4,35 +4,11 @@
         <div class="curved-top"></div>
         <div class="curved-bottom"></div>
         <div class="row container">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4" v-for="(items, index) in planning">
             <div class="card text-center border-0 bg-transparent">
               <div class="card-body">
-                <p class="card-title text-warning">3534</p>
-                <p class="card-text text-white">Planning application</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <div class="card text-center border-0 bg-transparent">
-              <div class="card-body">
-                <p class="card-title text-warning">896</p>
-                <p class="card-text text-white">Completed projects</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <div class="card text-center border-0 bg-transparent">
-              <div class="card-body">
-                <p class="card-title text-warning">172</p>
-                <p class="card-text text-white">trained professionals</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <div class="card text-center border-0 bg-transparent">
-              <div class="card-body">
-                <p class="card-title text-warning">19</p>
-                <p class="card-text text-white">International</p>
+                <p class="card-title text-warning">{{items.num}}</p>
+                <p class="card-text text-white">{{items.text}}</p>
               </div>
             </div>
           </div>
@@ -44,14 +20,13 @@
 
 
 <script>
- 
+import {planningElement} from '../assets/data/store.js'
 export default{
  name: 'PlanningComponent',
  
  data(){
      return{
-         
-       
+      planning: [...planningElement]
      }
  },
  methods:{

@@ -6,6 +6,7 @@
   <main>
     <JumboComponent/>
     <SpecialistComponent/>
+    <!-- v-for="(items, index) in specialist" :image="items.image" :title="items.title" :text="items.text" -->
     <PlanningComponent/>
     <RecentWorkComponent/>
     <CoreValuesComponent/>
@@ -24,7 +25,7 @@
 
  
 <script>
-
+import {specialistElement} from './assets/data/store.js'
 import NavComponent from './components/NavComponent.vue';
 import JumboComponent from './components/jumboComponent.vue';
 import SpecialistComponent from './components/SpecialistComponent.vue';
@@ -56,6 +57,7 @@ export default{
  
  data(){
      return{
+      specialist: [...specialistElement],
          
        
      }

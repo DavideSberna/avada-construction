@@ -9,20 +9,26 @@ RecentWorkComponent
                 <p class="pt-3">Lorem ipsum elit. Sequi incidunt ducimus ab, tenetur nesciunt itaque? Accusantium velit quis cumque inventore!</p>
             </div>
             <div class="row d-flex justify-content-center">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-                    <div class="card">
-                        <img src="../../public/img/project1-featured-294276386-600x600.jpg" alt="">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4" v-for="(items, index) in recentWork" >
+                    <div class="position-relative">
+                        <div class="card">
+                            <img :src="items.image" alt="">
+                        </div>
+                        <div class="position-absolute d-none bg-warning">
+                            <div class="d-flex flex-column align-items-center justify-content-center h-100">
+                                <div>
+                                    <div class="d-flex">
+                                        <a href="#">{{ items.icon[0]}} {{ items.icon[1]}}</a>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <p>{{items.title}}</p>
+                                    <p>{{items.text}}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-                    <div class="card">
-                        <img src="../../public/img/project2-featured-15013609-600x600.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-                    <div class="card">
-                        <img src="../../public/img/project3-featured-189023420-600x600.jpg" alt="">
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -37,12 +43,13 @@ RecentWorkComponent
 
 
 <script>
- 
+import {recentWorkElement} from '../assets/data/store.js'
 export default{
  name: 'RecentWorkComponent',
  
  data(){
      return{
+        recentWork: [...recentWorkElement]
          
        
      }
@@ -72,6 +79,22 @@ export default{
     width: 20%;
     border: solid 1px black;
   }
+ }
+a{
+    text-decoration: none;
+}
+ .position-absolute{
+        top: 0;
+        width: 100%;
+        height: 100%;
+     }
+ .position-relative:hover{
+    .card{
+        opacity: 0;
+    }
+     .position-absolute{
+        display: block !important;
+     }
  }
  
 </style>
