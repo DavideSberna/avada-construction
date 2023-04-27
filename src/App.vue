@@ -12,13 +12,11 @@
     <OwnersComponent/>
     <LatestComponent/>
     <TrustedComponent/>
-     
-
-     
-     
-     
-
+    <BuildingComponent/>
   </main>
+  <footer>
+    <FooterComponent/>
+  </footer>
    
   
   
@@ -36,6 +34,8 @@ import CoreValuesComponent from './components/CoreValuesComponent.vue';
 import OwnersComponent from './components/OwnersComponent.vue';
 import LatestComponent from './components/LatestComponent.vue';
 import TrustedComponent from './components/TrustedComponent.vue';
+import BuildingComponent from './components/BuildingComponent.vue';
+import FooterComponent from './components/FooterComponent.vue';
 export default{
  name: 'App',
 
@@ -49,6 +49,8 @@ export default{
   OwnersComponent,
   LatestComponent,
   TrustedComponent,
+  BuildingComponent,
+  FooterComponent,
  },
  
  

@@ -2,7 +2,7 @@
     <div>
       <div class="container">
         <div class="text-center max-w pt-5">
-          <p class="">Specialist in modern construction</p>
+          <p class="">Trusted partners</p>
           <hr class="w-25 m-auto text-warning border-2">
           <p class="pt-3">Lorem ipsum elit. Sequi incidunt ducimus ab, tenetur nesciunt itaque? Accusantium velit quis cumque inventore!</p>
         </div>
