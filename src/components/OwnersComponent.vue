@@ -8,14 +8,14 @@
             <p class="">Our home owners say</p>
             <hr class="w-25 m-auto text-warning border-2">
           </div>
-          <div class="col-12 pt-4">
+          <div class="col-12 pt-4" :class="index !== 0 ? 'd-none' : ''" v-for="(items, index) in owners">
             <div class="card text-center border-0 bg-transparent">
               <div class="circle">
-                <img src="../../public/img/home-testimonial-113165296.jpg" alt="">
+                <img :src="items.image" alt="">
               </div>
               <div class="card-body text-white max-w">
-                <p class="card-title">'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus nobis ex ad! Nam velit, aliquid obcaecati vel nihil facilis eum?'</p>
-                <p class="card-text">Harry smith - new home owner</p>
+                <p class="card-title">{{ items.title }}</p>
+                <p class="card-text">{{items.text}}</p>
               </div>
             </div>
           </div>
@@ -28,12 +28,13 @@
 
 
 <script>
- 
+import {ownersElement} from '../assets/data/store.js'
 export default{
  name: 'OwnersComponent',
  
  data(){
      return{
+      owners: [...ownersElement]
          
        
      }

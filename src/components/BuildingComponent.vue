@@ -51,7 +51,7 @@ export default{
     background-size: cover;
     background-position: 50px 50px;
     .max-w{
-        max-width: 500px;
+        max-width: 400px;
     }
 }
 .hr{

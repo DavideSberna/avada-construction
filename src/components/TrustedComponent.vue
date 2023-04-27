@@ -7,38 +7,10 @@
           <p class="pt-3">Lorem ipsum elit. Sequi incidunt ducimus ab, tenetur nesciunt itaque? Accusantium velit quis cumque inventore!</p>
         </div>
         <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4" v-for="(items, index) in trusted">
             <div class="card text-center border-0">
               <div class="circle d-flex align-items-center justify-content-center">
-                <img src="../../public/img/home-logo1-219096700-320x202.png" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <div class="card text-center border-0">
-              <div class="circle d-flex align-items-center justify-content-center">
-                <img src="../../public/img/home-logo10-219096700-320x202.png" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <div class="card text-center border-0">
-              <div class="circle d-flex align-items-center justify-content-center">
-                <img src="../../public/img/home-logo11-219096700-320x202.png" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <div class="card text-center border-0">
-              <div class="circle d-flex align-items-center justify-content-center">
-                <img src="../../public/img/home-logo2-219096700-320x202.png" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-            <div class="card text-center border-0">
-              <div class="circle d-flex align-items-center justify-content-center">
-                <img src="../../public/img/home-logo9-219096700-320x202.png" alt="">
+                <img :src="items.image" alt="">
               </div>
             </div>
           </div>
@@ -51,12 +23,13 @@
 
 
 <script>
- 
+import {trustedElement} from '../assets/data/store.js' 
 export default{
  name: 'TrustedComponent',
  
  data(){
      return{
+      trusted: [...trustedElement]
          
        
      }

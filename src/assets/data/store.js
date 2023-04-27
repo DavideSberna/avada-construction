@@ -184,10 +184,104 @@ const coreValuesElement = [
         text: 'Lorem ipsumtllum praesentium ipsam. Nesciunt ipsum a dolorum aliquam nulla odit minima cupiditate ratione molestiae.',
         color: 'purple',
     },
-]
+];
+
+const ownersElement = [
+    {
+        image: '../../public/img/home-testimonial-113165296.jpg',
+        title: "'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus nobis ex ad! Nam velit, aliquid obcaecati vel nihil facilis eum?'",
+        text: 'Harry smith - new home owner',
+    },
+    {
+        image: '../../public/img/home-testimonial-84268399.jpg',
+        title: "'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus nobis ex ad! Nam velit, aliquid obcaecati vel nihil facilis eum?'",
+        text: 'Harry smith - new home owner',
+    },
+    
+];
+
+const latestElement = [
+    {
+        image: '../../public/img/blog-post-134132600-400x241.jpg',
+        title: "'Lorem ipsum dol  ad! Nam velit, vel nihil facilis eum?'",
+        date: 'Dicember',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt fugit tempore? Quos sunt accusamus quidem minima magni aperiam hic, numquam dignissimos harum dolorum fugit, provident veniam cum enim! Quas.',
+    },
+    {
+        image: '../../public/img/blog-post-332773904-400x241.jpg',
+        title: "'Lorem ipsum dol  ad! Nam velit, vel nihil facilis eum?'",
+        date: 'Dicember',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt fugit tempore? Quos sunt accusamus quidem minima magni aperiam hic, numquam dignissimos harum dolorum fugit, provident veniam cum enim! Quas.',
+    },
+    {
+        image: '../../public/img/blog-post-92486644-400x241.jpg',
+        title: "'Lorem ipsum dol  ad! Nam velit, vel nihil facilis eum?'",
+        date: 'Dicember',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt fugit tempore? Quos sunt accusamus quidem minima magni aperiam hic, numquam dignissimos harum dolorum fugit, provident veniam cum enim! Quas.',
+    },
+    {
+        image: '../../public/img/blog-post-134132600-400x241.jpg',
+        title: "'Lorem ipsum dol  ad! Nam velit, vel nihil facilis eum?'",
+        date: 'Dicember',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt fugit tempore? Quos sunt accusamus quidem minima magni aperiam hic, numquam dignissimos harum dolorum fugit, provident veniam cum enim! Quas.',
+    },
+    {
+        image: '../../public/img/blog-post-134132600-400x241.jpg',
+        title: "'Lorem ipsum dol  ad! Nam velit, vel nihil facilis eum?'",
+        date: 'Dicember',
+        text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt fugit tempore? Quos sunt accusamus quidem minima magni aperiam hic, numquam dignissimos harum dolorum fugit, provident veniam cum enim! Quas.',
+    },
+    
+    
+];
+
+const trustedElement = [
+    {
+        image: '../../public/img/home-logo1-219096700-320x202.png',
+    },
+    {
+        image: '../../public/img/home-logo10-219096700-320x202.png',
+    },
+    {
+        image: '../../public/img/home-logo11-219096700-320x202.png',
+    },
+    {
+        image: '../../public/img/home-logo2-219096700-320x202.png',
+    },
+    {
+        image: '../../public/img/home-logo9-219096700-320x202.png',
+    },   
+];
+
+const footerElement = [
+    {
+        icon: 'A',
+        text: 'Corporate location 1600 am london',
+    }, 
+    {
+        icon: 'A',
+        text: 'Corporate location 1600 am london',
+    }, 
+    {
+        icon: 'A',
+        text: 'Corporate location 1600 am london',
+    }, 
+    {
+        icon: 'A',
+        text: 'Corporate location 1600 am london',
+    }, 
+    {
+        icon: 'A',
+        text: 'Corporate location 1600 am london',
+    }, 
+    {
+        icon: 'A',
+        text: 'Corporate location 1600 am london',
+    }, 
+];
 
 
-export {navElement, specialistElement, planningElement, recentWorkElement, coreValuesElement};
+export {navElement, specialistElement, planningElement, recentWorkElement, coreValuesElement, ownersElement, latestElement, trustedElement, footerElement};
 
 
 

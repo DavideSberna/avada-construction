@@ -12,26 +12,32 @@
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4 latest">
               <p class="text-warning">Latest tweets</p>
-              <div>
-                  <div class="d-flex align-items-center justify-content-start">
-                      <img class="logo-social" src="../../public/img/3a74ce3d0532b7773b174c45ca3bd05a_normal.png" alt="">
+              <div class="d-flex">
+                <div class="me-1">
+                    <div class="circle">
+                      <img class="" src="../../public/img/3a74ce3d0532b7773b174c45ca3bd05a_normal.png" alt="">
+                    </div>
+                </div>
+                  <div>
+                      <div class="d-flex align-items-center justify-content-start">
+                          <div>
+                              <p class="m-0">ThemeFusion</p>
+                              <p class="m-0">@Theme_fusion</p>
+                          </div>
+                      </div>
                       <div>
-                          <p class="m-0">ThemeFusion</p>
-                          <p class="m-0">@Theme_fusion</p>
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis debitis modi quod asperiores delectus dignissimos reiciendis deserunt perferendis distinctio molestias?
                       </div>
-                  </div>
-                  <div>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis debitis modi quod asperiores delectus dignissimos reiciendis deserunt perferendis distinctio molestias?
-                  </div>
-                  <div>
-                      <img class="post-social" src="../../public/img/En2TRxLW4AEiWUN.jpeg" alt="">
-                  </div>
-                  <div class="d-flex align-items-center justify-content-between">
-                      <div class="d-flex align-items-center">
-                          <a href="#">A</a>
-                          <a href="#">A</a>
+                      <div>
+                          <img class="post-social" src="../../public/img/En2TRxLW4AEiWUN.jpeg" alt="">
                       </div>
-                      <small href="#">22H</small>
+                      <div class="d-flex align-items-center justify-content-between">
+                          <div class="d-flex align-items-center">
+                              <a href="#">A</a>
+                              <a href="#">A</a>
+                          </div>
+                          <small href="#">22H</small>
+                      </div>
                   </div>
               </div>
             </div>
@@ -39,35 +45,15 @@
                 <div>
                     <p class="text-warning">Contact us today</p>
                     <ul class="p-0 m-0">
-                        <li class="list-group-item d-flex">
-                            <a class="link-underline-light" href="#">A</a>
-                            <small>Corporate location 1600 am london</small>
-                        </li>
-                        <li class="list-group-item d-flex">
-                            <a class="link-underline-light" href="#">A</a>
-                            <small>Corporate location 1600 am london</small>
-                        </li>
-                        <li class="list-group-item d-flex">
-                            <a class="link-underline-light" href="#">A</a>
-                            <small>Corporate location 1600 am london</small>
-                        </li>
-                        <li class="list-group-item d-flex">
-                            <a class="link-underline-light" href="#">A</a>
-                            <small>Corporate location 1600 am london</small>
-                        </li>
-                        <li class="list-group-item d-flex">
-                            <a class="link-underline-light" href="#">A</a>
-                            <small>Corporate location 1600 am london</small>
-                        </li>
-                        <li class="list-group-item d-flex">
-                            <a class="link-underline-light" href="#">A</a>
-                            <small>Corporate location 1600 am london</small>
+                        <li class="list-group-item d-flex" v-for="(items, index) in footer">
+                            <a class="link-underline-light" href="#">{{items.icon}}</a>
+                            <small>{{items.text}}</small>
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4 find">
-                <p class="text-warning">Contact us today</p>
+                <p class="text-warning">Find us</p>
                 <div>
                     <img src="https://www.thestatesman.com/wp-content/uploads/2020/04/googl_ED.jpg" alt="">
                 </div>
@@ -80,12 +66,13 @@
 
 
 <script>
- 
+import {footerElement} from '../assets/data/store.js'
 export default{
  name: 'FooterComponent',
  
  data(){
      return{
+        footer: [...footerElement]
          
        
      }
@@ -107,6 +94,17 @@ export default{
 
 <style lang="scss" scoped>
 
+.circle{
+  width: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  
+
+   img{
+    width: 100%;
+  }
+}
+
 a{
     text-decoration: none;
 }
@@ -115,10 +113,7 @@ a{
 }
 
 .latest{
-    .logo-social{
-        width: 30px;
-        display: block;
-    }
+    
     .post-social{
         width: 100%;
     }

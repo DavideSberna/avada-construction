@@ -9,7 +9,7 @@ RecentWorkComponent
                 <p class="pt-3">Lorem ipsum elit. Sequi incidunt ducimus ab, tenetur nesciunt itaque? Accusantium velit quis cumque inventore!</p>
             </div>
             <div class="row d-flex justify-content-center">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4" v-for="(items, index) in recentWork" >
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4" :class="index > 2 ? 'd-none' : ''" v-for="(items, index) in recentWork" >
                     <div class="position-relative">
                         <div class="card">
                             <img :src="items.image" alt="">
