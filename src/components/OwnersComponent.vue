@@ -4,10 +4,7 @@
           <div class="curved-top bg-body-tertiary"></div>
           <div class="curved-bottom bg-body-tertiary"></div>
         <div class="row container">
-          <div class="text-center max-w">
-            <p class="">Our home owners say</p>
-            <hr class="w-25 m-auto text-warning border-2">
-          </div>
+          <SectionTitle :title="section[3].title"/>
           <div class="col-12 pt-4" :class="index == current ? 'd-block' : 'd-none'" v-for="(items, index) in owners" @click="slider">
             <div class="card text-center border-0 bg-transparent">
               <div class="circle">
@@ -30,13 +27,19 @@
 
 
 <script>
+import SectionTitle from './SectionTitle.vue'
+import {sectionTitleArray} from '../assets/data/store.js';
 import {ownersElement} from '../assets/data/store.js'
 export default{
  name: 'OwnersComponent',
+ components:{
+  SectionTitle,
+ },
  
  data(){
      return{
       owners: [...ownersElement],
+      section: [...sectionTitleArray],
       current: 0
          
        

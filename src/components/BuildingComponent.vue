@@ -2,11 +2,7 @@
   <div class="bg-image">
     <div class="container">
         <div class="d-flex align-items-center justify-content-center pt-5 pb-5 text-white">
-            <div class="max-w">
-              <p class="">Building inspiring spaces</p>
-              <hr class="w-25 text-warning border-2">
-              <p class="pt-3">Lorem ipsum elit. Sequi incidunt ducimus ab, tenetur nesciunt itaque? Accusantium velit quis cumque inventore!</p>
-            </div>
+            <SectionTitle :title="section[6].title" :text="section[6].text" :text_capitalize="section[6].text_capitalize" :fs_3="section[6].fs_3" :text_start="section[6].text_start" :margin="section[6].margin"/>
             <div>
                 <button type="button" class="btn btn-warning">Get a free quote</button>
                 <small class="d-block">Only tables a few seconds!</small>
@@ -20,13 +16,17 @@
 
 
 <script>
- 
+ import SectionTitle from './SectionTitle.vue'
+import {sectionTitleArray} from '../assets/data/store.js';
 export default{
  name: 'BuildingComponent',
+ components:{
+  SectionTitle,
+ },
  
  data(){
      return{
-         
+        section: [...sectionTitleArray], 
        
      }
  },

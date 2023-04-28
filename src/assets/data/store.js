@@ -223,7 +223,7 @@ const ownersElement = [
 
 const latestElement = [
     {
-        image: '../../public/img/blog-post-134132600-400x241.jpg',
+        image: '../public/img/blog-post-134132600-400x241.jpg',
         title: "'Lorem ipsum dol  ad! Nam velit, vel nihil facilis eum?'",
         date: 'Dicember',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt fugit tempore? Quos sunt accusamus quidem minima magni aperiam hic, numquam dignissimos harum dolorum fugit, provident veniam cum enim! Quas.',
@@ -231,7 +231,7 @@ const latestElement = [
         important: 1,
     },
     {
-        image: '../../public/img/blog-post-332773904-400x241.jpg',
+        image: '../public/img/blog-post-332773904-400x241.jpg',
         title: "'Lorem ipsum dol  ad! Nam velit, vel nihil facilis eum?'",
         date: 'Dicember',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt fugit tempore? Quos sunt accusamus quidem minima magni aperiam hic, numquam dignissimos harum dolorum fugit, provident veniam cum enim! Quas.',
@@ -239,7 +239,7 @@ const latestElement = [
         important: 1,
     },
     {
-        image: '../../public/img/blog-post-92486644-400x241.jpg',
+        image: '../public/img/blog-post-92486644-400x241.jpg',
         title: "'Lorem ipsum dol  ad! Nam velit, vel nihil facilis eum?'",
         date: 'Dicember',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt fugit tempore? Quos sunt accusamus quidem minima magni aperiam hic, numquam dignissimos harum dolorum fugit, provident veniam cum enim! Quas.',
@@ -247,7 +247,7 @@ const latestElement = [
         important: 1,
     },
     {
-        image: '../../public/img/blog-post-134132600-400x241.jpg',
+        image: '../public/img/blog-post-134132600-400x241.jpg',
         title: "'Lorem ipsum dol  ad! Nam velit, vel nihil facilis eum?'",
         date: 'Dicember',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt fugit tempore? Quos sunt accusamus quidem minima magni aperiam hic, numquam dignissimos harum dolorum fugit, provident veniam cum enim! Quas.',
@@ -255,7 +255,7 @@ const latestElement = [
         important: 2,
     },
     {
-        image: '../../public/img/blog-post-134132600-400x241.jpg',
+        image: '../public/img/blog-post-134132600-400x241.jpg',
         title: "'Lorem ipsum dol  ad! Nam velit, vel nihil facilis eum?'",
         date: 'Dicember',
         text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam incidunt fugit tempore? Quos sunt accusamus quidem minima magni aperiam hic, numquam dignissimos harum dolorum fugit, provident veniam cum enim! Quas.',
@@ -269,18 +269,23 @@ const latestElement = [
 const trustedElement = [
     {
         image: '../../public/img/home-logo1-219096700-320x202.png',
+        title: 'logo-1',
     },
     {
         image: '../../public/img/home-logo10-219096700-320x202.png',
+        title: 'logo-2',
     },
     {
         image: '../../public/img/home-logo11-219096700-320x202.png',
+        title: 'logo-3',
     },
     {
         image: '../../public/img/home-logo2-219096700-320x202.png',
+        title: 'logo-4',
     },
     {
         image: '../../public/img/home-logo9-219096700-320x202.png',
+        title: 'logo-5',
     },   
 ];
 
@@ -312,7 +317,54 @@ const footerElement = [
 ];
 
 
-export {navElement, specialistElement, planningElement, recentWorkElement, coreValuesElement, ownersElement, latestElement, trustedElement, footerElement};
+const sectionTitleArray = [
+    {
+        title: 'Specialists in modern construction',
+        text: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate labore corrupti dignissimos, aliquid vel sequi quibusdam minus iure nobis repudiandae laborum et!',
+        text_capitalize: 'text-capitalize',
+        fs_3: 'fs-3',
+    },
+    {
+        title: 'Explore recent work',
+        text: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate labore corrupti dignissimos, aliquid vel sequi quibusdam minus iure nobis repudiandae laborum et!',
+        text_capitalize: 'text-capitalize',
+        fs_3: 'fs-3',
+    },
+    {
+        title: 'Our core values',
+        text: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate labore corrupti dignissimos, aliquid vel sequi quibusdam minus iure nobis repudiandae laborum et!',
+        text_capitalize: 'text-capitalize',
+        fs_3: 'fs-3',
+    },
+    {
+        title: 'Our home owners say',
+        text: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate labore corrupti dignissimos, aliquid vel sequi quibusdam minus iure nobis repudiandae laborum et!',
+        text_capitalize: 'text-capitalize',
+        fs_3: 'fs-3',
+    },
+    {
+        title: 'Latest news',
+        text: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate labore corrupti dignissimos, aliquid vel sequi quibusdam minus iure nobis repudiandae laborum et!',
+        text_capitalize: 'text-capitalize',
+        fs_3: 'fs-3',
+    },
+    {
+        title: 'Trusted Partners',
+        text: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate labore corrupti dignissimos, aliquid vel sequi quibusdam minus iure nobis repudiandae laborum et!',
+        text_capitalize: 'text-capitalize',
+        fs_3: 'fs-3',
+    },
+    {
+        title: 'Building inspiring spaces',
+        text: ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate labore corrupti dignissimos, aliquid vel sequi quibusdam minus iure nobis repudiandae laborum et!',
+        text_start: 'text-start',
+        text_capitalize: 'text-capitalize',
+        fs_3: 'fs-3',
+        margin: 'm-0',
+    },
+]
+console.log(sectionTitleArray[6].margin)
+export {navElement, specialistElement, planningElement, recentWorkElement, coreValuesElement, ownersElement, latestElement, trustedElement, footerElement, sectionTitleArray};
 
 
 

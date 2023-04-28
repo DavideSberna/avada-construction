@@ -8,11 +8,7 @@
     <JumboComponent/>
 
     <div id="specialist" class="pt-5 pb-5 container">
-      <div class="text-center max-w">
-        <p class="">Specialist in modern construction</p>
-        <hr class="w-25 m-auto text-warning border-2">
-        <p class="pt-3">Lorem ipsum elit. Sequi incidunt ducimus ab, tenetur nesciunt itaque? Accusantium velit quis cumque inventore!</p>
-      </div>
+      <SectionTitle :title="section[0].title" :text="section[0].text" :fs_3="section[0].fs_3" :text_capitalize="section[0].text_capitalize"/>
       <div class="row">
         <SpecialistComponent v-for="(items, index) in specialist" :icon="items.icon" :title="items.title" :text="items.text"/>
       </div>
@@ -30,13 +26,9 @@
 
     <div id="recent" class="container">
         <div class="pt-5 pb-5">
-            <div class="text-center max-w">
-                <p class="">Explore recent work</p>
-                <hr class="w-25 m-auto text-warning border-2">
-                <p class="pt-3">Lorem ipsum elit. Sequi incidunt ducimus ab, tenetur nesciunt itaque? Accusantium velit quis cumque inventore!</p>
-            </div>
+          <SectionTitle :title="section[1].title" :text="section[1].text" :fs_3="section[1].fs_3" :text_capitalize="section[1].text_capitalize"/>
             <div class="row d-flex justify-content-center">
-              <RecentWorkComponent v-for="(items, index) in recentWork" :image="items.image" :icon="items.icon[0]" :icon2="items.icon[1]" :text="items.text" :title="items.title" :status="!items.status" :important="items.important" :num="2" />
+              <RecentWorkComponent v-for="(items, index) in recentWork" :image="items.image" :icon="items.icon[0]" :icon2="items.icon[1]" :text="items.text" :title="items.title" :status="items.status" :important="items.important" :num="2" />
             </div>
         </div>
         <div class="text-center d-flex align-items-center justify-content-center mb-5 more pt-3 pb-3">
@@ -45,12 +37,45 @@
             <hr>
         </div>
     </div>
+
+    <div id="core-values" class="bg-body-tertiary">
+      <div class="container">
+        <SectionTitle :title="section[2].title" :text="section[2].text" :fs_3="section[2].fs_3" :text_capitalize="section[2].text_capitalize"/>
+        <div class="row">
+          <CoreValuesComponent v-for="(items, index) in coreValues" :color="items.color" :icon="items.icon" :text="items.text" :title="items.title"/>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <OwnersComponent/>
+    </section>
      
+    <div id="latest" class="bg-body-tertiary">
+        <div class="container">
+          <SectionTitle :title="section[4].title" :text="section[4].text" :fs_3="section[4].fs_3" :text_capitalize="section[4].text_capitalize"/>
+            <div>
+                <div class="row">
+                    <LatestComponent v-for="(items, index) in latest" :image="items.image" :text="items.text" :title="items.title" :status="items.status" :important="items.important" :num="2" :date="items.date" />
+                </div>
+                  <div class="text-center d-flex align-items-center justify-content-center mb-5   more pt-3 pb-3">
+                      <hr>
+          <p class="link-underline-light text-secondary ps-5 pe-5" @click="showCardLatest">View all projects</p>
+                      <hr>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="trusted">
+      <div class="container">
+        <SectionTitle :title="section[5].title" :text="section[5].text" :fs_3="section[5].fs_3" :text_capitalize="section[5].text_capitalize"/>
+        <div class="row">
+          <TrustedComponent v-for="(items, index) in trusted" :image="items.image" :title="items.title"/>
+        </div>
+      </div>
+    </div>
      
-    <CoreValuesComponent/>
-    <OwnersComponent/>
-    <LatestComponent/>
-    <TrustedComponent/>
     <BuildingComponent/>
   </main>
   <footer>
@@ -66,6 +91,10 @@
 import {specialistElement} from './assets/data/store.js';
 import {planningElement} from './assets/data/store.js';
 import {recentWorkElement} from './assets/data/store.js';
+import {coreValuesElement} from './assets/data/store.js';
+import {latestElement} from './assets/data/store.js';
+import {trustedElement} from './assets/data/store.js';
+import {sectionTitleArray} from './assets/data/store.js';
 import NavComponent from './components/NavComponent.vue';
 import JumboComponent from './components/jumboComponent.vue';
 import SpecialistComponent from './components/SpecialistComponent.vue';
@@ -77,6 +106,7 @@ import LatestComponent from './components/LatestComponent.vue';
 import TrustedComponent from './components/TrustedComponent.vue';
 import BuildingComponent from './components/BuildingComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
+import SectionTitle from './components/SectionTitle.vue';
 export default{
  name: 'App',
 
@@ -92,6 +122,7 @@ export default{
   TrustedComponent,
   BuildingComponent,
   FooterComponent,
+  SectionTitle,
  },
  
  
@@ -100,7 +131,12 @@ export default{
       specialist: [...specialistElement], 
       planning: [...planningElement],
       recentWork: [...recentWorkElement],
+      coreValues: [...coreValuesElement],
+      latest: [...latestElement],
+      trusted: [...trustedElement],
+      section: [...sectionTitleArray],
       counter: 0,
+      n: 0,
      }
  },
  methods:{
@@ -114,7 +150,20 @@ export default{
                 item.status = false
             } 
         })
+    },
+
+    showCardLatest(){
+        this.n++
+        this.latest.map((item)=>{
+            if(item.status == false){
+                item.status = true
+            }
+            if(this.n % 2 == 0){
+                item.status = false
+            } 
+        })
     }
+    
      
  },
    
@@ -194,6 +243,44 @@ export default{
         display: block !important;
      }
  }
+}
+
+#core-values{
+  .max-w{
+    max-width: 500px;
+    margin: 0 auto;
+  }
+};
+
+#latest{
+  .max-w{
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .more{
+  hr{
+    width: 20%;
+    border: solid 1px black;
+  }
+  p{
+    cursor: pointer;
+  }
+ }
+};
+
+#trusted{
+  .max-w{
+    max-width: 500px;
+    margin: 0 auto;
+  }
+ 
+.card-body{
+  hr{
+    width: 30px;
+    margin: 0 auto;
+  }
+ 
+}
 }
   
  
