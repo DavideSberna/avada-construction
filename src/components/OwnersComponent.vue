@@ -8,7 +8,7 @@
             <p class="">Our home owners say</p>
             <hr class="w-25 m-auto text-warning border-2">
           </div>
-          <div class="col-12 pt-4" :class="index !== 0 ? 'd-none' : ''" v-for="(items, index) in owners">
+          <div class="col-12 pt-4" :class="index == current ? 'd-block' : 'd-none'" v-for="(items, index) in owners" @click="slider">
             <div class="card text-center border-0 bg-transparent">
               <div class="circle">
                 <img :src="items.image" alt="">
@@ -19,12 +19,14 @@
               </div>
             </div>
           </div>
+          <div class="d-flex align-items-center justify-content-center">
+            <span v-for="(items, index) in owners" :class="index == current ? 'bg-primary' : '' " @click="slider">A</span>
+          </div>
         </div>
       </div>
     </div>
-   
 </template>
-
+ 
 
 
 <script>
@@ -34,12 +36,19 @@ export default{
  
  data(){
      return{
-      owners: [...ownersElement]
+      owners: [...ownersElement],
+      current: 0
          
        
      }
  },
  methods:{
+  slider(){
+    this.current++;
+    if(this.current > this.owners.length - 1){
+      this.current = 0
+    }
+  }
      
  },
  
@@ -67,6 +76,9 @@ export default{
     .max-w{
       max-width: 500px;
       margin: 0 auto;
+    }
+    .col-12{
+      min-height: 300px;
     }
   }
   .circle{

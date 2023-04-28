@@ -33,8 +33,8 @@
                       </div>
                       <div class="d-flex align-items-center justify-content-between">
                           <div class="d-flex align-items-center">
-                              <a href="#">A</a>
-                              <a href="#">A</a>
+                            <font-awesome-icon icon="fa-solid fa-heart" />
+                            <font-awesome-icon icon="fa-solid fa-arrow-up-from-bracket" class="fa-rotate-90" />
                           </div>
                           <small href="#">22H</small>
                       </div>
@@ -46,7 +46,7 @@
                     <p class="text-warning">Contact us today</p>
                     <ul class="p-0 m-0">
                         <li class="list-group-item d-flex" v-for="(items, index) in footer">
-                            <a class="link-underline-light" href="#">{{items.icon}}</a>
+                            <font-awesome-icon :icon="items.icon" />
                             <small>{{items.text}}</small>
                         </li>
                     </ul>

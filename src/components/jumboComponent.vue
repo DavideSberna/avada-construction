@@ -15,7 +15,7 @@
     <div>
       <div class="position-relative bg-warning text-center min-h d-flex justify-content-center align-items-center">
         <p>Do you have a construction project we can help with?</p>
-        <button type="button" class="btn btn-dark w-25 position-absolute">Get a free quote</button>
+        <button type="button" class="btn btn-dark position-absolute max-w">Get a free quote</button>
       </div>
     </div>
   </div>
@@ -63,5 +63,8 @@ export default{
     border: solid 1px white;
     
   }
+}
+.max-w{
+  width: 200px;
 }
 </style>

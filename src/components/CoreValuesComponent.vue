@@ -10,7 +10,7 @@
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4" v-for="(items, index) in coreValues">
             <div class="card text-center border-0 bg-body-tertiary">
               <div class="circle d-flex align-items-center justify-content-center" :class="items.color">
-                <img :src="items.image" alt="">
+                <font-awesome-icon :icon="items.icon" />
               </div>
               <div class="card-body">
                 <p class="card-title">{{items.title}}</p>

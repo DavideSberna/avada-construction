@@ -8,18 +8,21 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item" v-for="(items, index) in nav">
-                  <a class="nav-link" href="#">{{items.name}}</a>
-                  <ul class="d-none">
-                    <li class="link-underline-light" v-for="(item, index) in items.subitems">
+            <ul class="navbar-nav me-auto m-0 mb-lg-0">
+                <li class="nav-item position-relative" v-for="(items, index) in nav" @click="openItem">
+                  <div class="d-flex align-items-center">
+                    <a class="nav-link pe-2" href="#">{{items.name}}</a>
+                    <font-awesome-icon v-if="items.subitems.length !== 0" icon="fa-solid fa-caret-down" class="text-black-50"/>
+                  </div>
+                  <ul class="item d-none m-0 p-0 absolute">
+                    <li class="link-underline-light pt-3" v-for="(item, index) in items.subitems" :class="item.length == 0 ? 'd-none': ''">
                       <a class="nav-link" :href="item.link">{{item.name}}</a>
                     </li>
                   </ul>
                 </li>
             </ul>
             <form class="d-flex" role="search">
-                <button class="btn btn-warning" type="submit">Get quote</button>
+                <button class="btn btn-warning ms-3" type="submit">Get quote</button>
             </form>
           </div>
       </div>
@@ -36,7 +39,8 @@ export default{
  
  data(){
      return{
-      nav : [...navElement]
+      nav : [...navElement],
+      drop: false,
          
        
      }
@@ -65,11 +69,36 @@ nav{
    
 }
 .nav-item:hover{
-  ul{
+  .item:hover{
+    display: block !important;
+  }
+  .absolute{
+    min-width: 200px;
     display: block !important;
     list-style: none;
+    position: absolute;
+    top: 40px;
+    background-color: #f8f9fa;
   }
 
+}
+
+
+@media screen and (max-width: 768px){
+    
+  .absolute{
+    position:static !important;
+    li{
+      padding-left: 20px;
+      padding-top: 0 !important;
+    }
+  }
+  form{
+    .btn{
+      margin: 15px 0 15px 0 !important;
+    }
+  }
+  
 }
  
 </style>

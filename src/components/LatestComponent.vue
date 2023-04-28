@@ -9,7 +9,7 @@ LatestComponent
             </div>
             <div>
                 <div class="row">
-                    <div class="col-4" :class="index > 2 ? 'd-none' : ''" v-for="(items, index) in latest">
+                    <div class="col-4" v-for="(items, index) in latest" :class="!items.status && items.important == 2 ? 'd-none': ''">
                         <div class="card border-0">
                             <img :src="items.image" alt="">
                             <div class="card-body">
@@ -22,7 +22,7 @@ LatestComponent
                     </div>
                     <div class="text-center d-flex align-items-center justify-content-center mb-5 more pt-3 pb-3">
                         <hr>
-                        <a href="#" class="link-underline-light text-secondary ps-5 pe-5">View all projects</a>
+            <p class="link-underline-light text-secondary ps-5 pe-5" @click="showCard">View all projects</p>
                         <hr>
                     </div>
                 </div>
@@ -41,12 +41,25 @@ export default{
  
  data(){
      return{
-        latest: [...latestElement]
+        latest: [...latestElement],
+        counter: 0,
          
        
      }
  },
  methods:{
+      showCard(){
+        this.counter++
+        this.latest.map((item)=>{
+            if(item.status == false){
+                item.status = true
+            }
+            if(this.counter % 2 == 0){
+                item.status = false
+            } 
+        })
+    }
+    
      
  },
  
@@ -71,6 +84,9 @@ export default{
   hr{
     width: 20%;
     border: solid 1px black;
+  }
+  p{
+    cursor: pointer;
   }
  }
  
