@@ -1,22 +1,22 @@
 
 <template>
-   <div class="bg-dark">
-    <div class="container text-white">
-        <div class="row">
-            <FooterAvada/>
-            <FooterLatest/>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4 contact">
-                <div>
-                    <p class="text-warning">Contact us today</p>
-                    <ul class="p-0 m-0">
-                        <FooterContact v-for="(items, index) in footer" :icon="items.icon" :text="items.text"/>       
-                    </ul>
+    <div class="bg-dark">
+        <div class="container text-white">
+            <div class="row dark-gray">
+                <FooterAvada />
+                <FooterLatest />
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4 contact">
+                    <div>
+                        <p class="text-warning">Contact us today</p>
+                        <ul class="p-0 m-0 dark-gray">
+                            <FooterContact v-for="(items, index) in footer" :icon="items.icon" :text="items.text" />
+                        </ul>
+                    </div>
                 </div>
+                <FooterFind />
             </div>
-            <FooterFind/>
         </div>
     </div>
-   </div>
 </template>
 
 

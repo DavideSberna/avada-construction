@@ -1,10 +1,8 @@
 <template>
-    
-        <li class="list-group-item d-flex">
-            <font-awesome-icon :icon="icon" />
-            <small>{{text}}</small>
-        </li>
- 
+    <li class="list-group-item d-flex p-1">
+        <font-awesome-icon :icon="icon" class="me-2" />
+        <small>{{ text }}</small>
+    </li>
 </template>
 
 

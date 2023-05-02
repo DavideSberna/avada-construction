@@ -1,27 +1,28 @@
 <template>
-    <div>
-      <div class="bg-image position-relative d-flex align-items-center justify-content-center text-white">
-          <div class="curved-top bg-body-tertiary"></div>
-          <div class="curved-bottom bg-body-tertiary"></div>
-        <div class="row container">
-          <SectionTitle :title="section[3].title"/>
-          <div class="col-12 pt-4" :class="index == current ? 'd-block' : 'd-none'" v-for="(items, index) in owners" @click="slider">
-            <div class="card text-center border-0 bg-transparent">
-              <div class="circle">
-                <img :src="items.image" alt="">
-              </div>
-              <div class="card-body text-white max-w">
-                <p class="card-title">{{ items.title }}</p>
-                <p class="card-text">{{items.text}}</p>
-              </div>
+  <div>
+    <div class="bg-image position-relative d-flex align-items-center justify-content-center text-white">
+      <div class="curved-top bg-gray"></div>
+      <div class="curved-bottom bg-gray"></div>
+      <div class="row container">
+        <SectionTitle :title="section[3].title" />
+        <div class="col-12 pt-4" :class="index == current ? 'd-block' : 'd-none'" v-for="(items, index) in owners"
+          @click="slider">
+          <div class="card text-center border-0 bg-transparent">
+            <div class="circle">
+              <img :src="items.image" alt="">
+            </div>
+            <div class="card-body text-white max-w">
+              <p class="card-title">{{ items.title }}</p>
+              <p class="card-text">{{ items.text }}</p>
             </div>
           </div>
-          <div class="d-flex align-items-center justify-content-center">
-            <span v-for="(items, index) in owners" :class="index == current ? 'bg-primary' : '' " @click="slider">A</span>
-          </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+          <span v-for="(items, index) in owners" :class="index == current ? 'bg-primary' : ''" @click="slider">A</span>
         </div>
       </div>
     </div>
+  </div>
 </template>
  
 
@@ -67,7 +68,7 @@ export default{
 
 
 <style lang="scss" scoped>
-
+@use '../../src/assets/styles/general.scss' as *;
 .bg-image{
   background-image: url('../../public/img/home-parallax-144609983.jpg');
   min-height: 600px;
@@ -96,24 +97,18 @@ export default{
     width: 120px;
   }
 }
+
   .curved-top{
-    position: absolute;
+    @include curved();
     top: 0;
-    width: 100%;
-    height: 80px;
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
-
   }
   .curved-bottom{
-    position: absolute;
+    @include curved();
     bottom: 0;
-    width: 100%;
-    height: 80px;
-    background-color: rgb(255, 255, 255);
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
-
   }
 }
  

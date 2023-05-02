@@ -1,11 +1,11 @@
 <template>
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
-        <div class="card text-center border-0">
-          <div class="circle d-flex align-items-center justify-content-center">
-            <img :src="image" :alt="title">
-          </div>
-        </div>
-      </div> 
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 pt-4">
+    <div class="card text-center border-0">
+      <div class="circle d-flex align-items-center justify-content-center">
+        <img :src="image" :alt="title">
+      </div>
+    </div>
+  </div>
 </template>
 
 
